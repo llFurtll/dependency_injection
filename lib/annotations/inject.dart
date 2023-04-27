@@ -1,12 +1,11 @@
 import 'reflection.dart';
 
-@Reflection()
-class Autowired {
+class Inject {
   final String nameSetter;
   @Reflection()
   final Type? type;
 
-  const Autowired({
+  const Inject({
     required this.nameSetter,
     this.type
   });

@@ -1,10 +1,12 @@
 import 'package:reflectable/reflectable.dart';
 
-import '../annotations/autowired.dart';
+import '../annotations/inject.dart';
 import '../annotations/reflection.dart';
 import '../main.reflectable.dart';
 
+@Reflection()
 class AutoInject {
+  static final Map<Type, dynamic> _dependencies = {};
   static const reflection = Reflection();
 
   AutoInject() {
@@ -21,19 +23,31 @@ class AutoInject {
         if (annotations.isNotEmpty) {
           for (dynamic annotation in annotations) {
             InstanceMirror instanceMirror = reflection.reflect(this);
-            if (annotation is Autowired) {
-              if (annotation.type != null) {
-                final typeMirror = reflection.reflectType(annotation.type!) as ClassMirror;
+            if (annotation is Inject) {
+              final dependencie = _dependencies[variable.reflectedType];
+              if (dependencie != null) {
                 instanceMirror.invokeSetter(
                   annotation.nameSetter,
-                  typeMirror.newInstance("", [])
+                  dependencie
                 );
               } else {
-                final variableMirror = reflection.reflectType(variable.reflectedType) as ClassMirror;
-                instanceMirror.invokeSetter(
-                  annotation.nameSetter,
-                  variableMirror.newInstance("", [])
-                );
+                if (annotation.type != null) {
+                  final typeMirror = reflection.reflectType(annotation.type!) as ClassMirror;
+                  final newInstance = typeMirror.newInstance("", []);
+                  instanceMirror.invokeSetter(
+                    annotation.nameSetter,
+                    newInstance
+                  );
+                  _dependencies[variable.reflectedType] = newInstance;
+                } else {
+                  final variableMirror = reflection.reflectType(variable.reflectedType) as ClassMirror;
+                  final newInstance = variableMirror.newInstance("", []);
+                  instanceMirror.invokeSetter(
+                    annotation.nameSetter,
+                    newInstance
+                  );
+                  _dependencies[variable.reflectedType] = newInstance;
+                }
               }
             }
           }

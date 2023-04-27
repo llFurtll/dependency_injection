@@ -1,15 +1,17 @@
-import 'annotations/autowired.dart';
+
+
 import 'annotations/reflection.dart';
+import 'annotations/inject.dart';
 import 'injection/auto_inject.dart';
 
 abstract class IRepository {}
 
 @Reflection()
 class Teste extends AutoInject {
-  @Autowired(nameSetter: "setRepository", type: Repository)
+  @Inject(nameSetter: "setRepository", type: Repository)
   late final IRepository repository;
   
-  @Autowired(nameSetter: "setOtherRepository")
+  @Inject(nameSetter: "setOtherRepository")
   late final Repository otherRepository;
   
   set setRepository(IRepository repository) {
@@ -25,7 +27,5 @@ class Teste extends AutoInject {
 class Repository extends IRepository {}
 
 void main() {
-  final teste = Teste();
-  print(teste.repository);
-  print(teste.otherRepository);
+  
 }

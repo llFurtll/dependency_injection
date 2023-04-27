@@ -3,8 +3,9 @@
 
 import 'dart:core';
 import 'main.dart' as prefix1;
-import 'package:dependency_injection/annotations/autowired.dart' as prefix2;
+import 'package:dependency_injection/annotations/inject.dart' as prefix3;
 import 'package:dependency_injection/annotations/reflection.dart' as prefix0;
+import 'package:dependency_injection/injection/auto_inject.dart' as prefix2;
 
 // ignore_for_file: camel_case_types
 // ignore_for_file: implementation_imports
@@ -28,10 +29,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             0,
             const prefix0.Reflection(),
-            const <int>[0, 1, 8, 9, 10],
-            const <int>[11, 12, 13, 14, 15, 16, 4, 5, 6, 7, 8, 9],
+            const <int>[0, 1, 7, 8, 9],
+            const <int>[10, 11, 12, 13, 14, 15, 3, 4, 5, 6, 7, 8],
             const <int>[],
-            -1,
+            2,
             {},
             {},
             {r'': (bool b) => () => b ? prefix1.Teste() : null},
@@ -46,8 +47,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             1,
             const prefix0.Reflection(),
-            const <int>[17],
-            const <int>[11, 12, 13, 14, 15],
+            const <int>[16],
+            const <int>[10, 11, 12, 13, 14],
             const <int>[],
             -1,
             {},
@@ -59,22 +60,18 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const <Object>[const prefix0.Reflection()],
             null),
         r.NonGenericClassMirrorImpl(
-            r'Autowired',
-            r'.Autowired',
+            r'AutoInject',
+            r'.AutoInject',
             134217735,
             2,
             const prefix0.Reflection(),
-            const <int>[2, 3, 20],
-            const <int>[11, 12, 13, 14, 15, 18, 19],
-            const <int>[],
+            const <int>[2, 15, 18],
+            const <int>[10, 11, 12, 13, 14, 15],
+            const <int>[17],
             -1,
+            {r'reflection': () => prefix2.AutoInject.reflection},
             {},
-            {},
-            {
-              r'': (bool b) => ({nameSetter, type}) => b
-                  ? prefix2.Autowired(type: type, nameSetter: nameSetter)
-                  : null
-            },
+            {r'': (bool b) => () => b ? prefix2.AutoInject() : null},
             1,
             2,
             const <int>[],
@@ -84,29 +81,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
       <m.DeclarationMirror>[
         r.VariableMirrorImpl(r'repository', 134349829, 0,
             const prefix0.Reflection(), -1, 3, 3, const <int>[], const <Object>[
-          const prefix2.Autowired(
+          const prefix3.Inject(
               nameSetter: "setRepository", type: prefix1.Repository)
         ]),
         r.VariableMirrorImpl(r'otherRepository', 134349829, 0,
             const prefix0.Reflection(), 1, 1, 1, const <int>[], const <Object>[
-          const prefix2.Autowired(nameSetter: "setOtherRepository")
+          const prefix3.Inject(nameSetter: "setOtherRepository")
         ]),
-        r.VariableMirrorImpl(r'nameSetter', 134349829, 2,
+        r.VariableMirrorImpl(r'reflection', 134349973, 2,
             const prefix0.Reflection(), -1, 4, 4, const <int>[], const []),
-        r.VariableMirrorImpl(
-            r'type',
-            67240965,
-            2,
-            const prefix0.Reflection(),
-            -1,
-            5,
-            5,
-            const <int>[],
-            const <Object>[const prefix0.Reflection()]),
-        r.ImplicitGetterMirrorImpl(const prefix0.Reflection(), 0, 4),
-        r.ImplicitSetterMirrorImpl(const prefix0.Reflection(), 0, 5),
-        r.ImplicitGetterMirrorImpl(const prefix0.Reflection(), 1, 6),
-        r.ImplicitSetterMirrorImpl(const prefix0.Reflection(), 1, 7),
+        r.ImplicitGetterMirrorImpl(const prefix0.Reflection(), 0, 3),
+        r.ImplicitSetterMirrorImpl(const prefix0.Reflection(), 0, 4),
+        r.ImplicitGetterMirrorImpl(const prefix0.Reflection(), 1, 5),
+        r.ImplicitSetterMirrorImpl(const prefix0.Reflection(), 1, 6),
         r.MethodMirrorImpl(
             r'setRepository=',
             1310724,
@@ -131,9 +118,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const []),
         r.MethodMirrorImpl(r'', 64, 0, -1, 0, 0, const <int>[], const <int>[],
             const prefix0.Reflection(), const []),
-        r.MethodMirrorImpl(r'==', 2097154, -1, -1, 6, 6, const <int>[],
+        r.MethodMirrorImpl(r'==', 2097154, -1, -1, 5, 5, const <int>[],
             const <int>[4], const prefix0.Reflection(), const []),
-        r.MethodMirrorImpl(r'toString', 2097154, -1, -1, 4, 4, const <int>[],
+        r.MethodMirrorImpl(r'toString', 2097154, -1, -1, 6, 6, const <int>[],
             const <int>[], const prefix0.Reflection(), const []),
         r.MethodMirrorImpl(
             r'noSuchMethod',
@@ -150,20 +137,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const <int>[], const prefix0.Reflection(), const []),
         r.MethodMirrorImpl(r'runtimeType', 2097155, -1, -1, 8, 8, const <int>[],
             const <int>[], const prefix0.Reflection(), const []),
-        r.MethodMirrorImpl(r'inject', 1310722, -1, -1, -1, -1, const <int>[],
+        r.MethodMirrorImpl(r'inject', 1310722, 2, -1, -1, -1, const <int>[],
             const <int>[], const prefix0.Reflection(), const []),
         r.MethodMirrorImpl(r'', 64, 1, -1, 1, 1, const <int>[], const <int>[],
             const prefix0.Reflection(), const []),
-        r.ImplicitGetterMirrorImpl(const prefix0.Reflection(), 2, 18),
-        r.ImplicitGetterMirrorImpl(const prefix0.Reflection(), 3, 19),
-        r.MethodMirrorImpl(r'', 128, 2, -1, 2, 2, const <int>[],
-            const <int>[6, 7], const prefix0.Reflection(), const [])
+        r.ImplicitGetterMirrorImpl(const prefix0.Reflection(), 2, 17),
+        r.MethodMirrorImpl(r'', 0, 2, -1, 2, 2, const <int>[], const <int>[],
+            const prefix0.Reflection(), const [])
       ],
       <m.ParameterMirror>[
         r.ParameterMirrorImpl(
             r'_repository',
             134348902,
-            5,
+            4,
             const prefix0.Reflection(),
             -1,
             3,
@@ -175,7 +161,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'_otherRepository',
             134348902,
-            7,
+            6,
             const prefix0.Reflection(),
             1,
             1,
@@ -187,7 +173,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'repository',
             134348806,
-            8,
+            7,
             const prefix0.Reflection(),
             -1,
             3,
@@ -199,7 +185,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'repository',
             134348806,
-            9,
+            8,
             const prefix0.Reflection(),
             1,
             1,
@@ -211,7 +197,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'other',
             134348806,
-            11,
+            10,
             const prefix0.Reflection(),
             -1,
             9,
@@ -223,7 +209,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'invocation',
             134348806,
-            13,
+            12,
             const prefix0.Reflection(),
             -1,
             10,
@@ -231,30 +217,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const <int>[],
             const [],
             null,
-            null),
-        r.ParameterMirrorImpl(
-            r'nameSetter',
-            134358022,
-            20,
-            const prefix0.Reflection(),
-            -1,
-            4,
-            4,
-            const <int>[],
-            const [],
-            null,
-            #nameSetter),
-        r.ParameterMirrorImpl(r'type', 67253254, 20, const prefix0.Reflection(),
-            -1, 5, 5, const <int>[], const [], null, #type)
+            null)
       ],
       <Type>[
         prefix1.Teste,
         prefix1.Repository,
-        prefix2.Autowired,
+        prefix2.AutoInject,
         prefix1.IRepository,
-        String,
-        Type,
+        prefix0.Reflection,
         bool,
+        String,
         int,
         Type,
         Object,
@@ -269,9 +241,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r'runtimeType': (dynamic instance) => instance.runtimeType,
         r'inject': (dynamic instance) => instance.inject,
         r'repository': (dynamic instance) => instance.repository,
-        r'otherRepository': (dynamic instance) => instance.otherRepository,
-        r'nameSetter': (dynamic instance) => instance.nameSetter,
-        r'type': (dynamic instance) => instance.type
+        r'otherRepository': (dynamic instance) => instance.otherRepository
       },
       {
         r'repository=': (dynamic instance, value) =>
@@ -296,7 +266,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.LibraryMirrorImpl(
             r'',
             Uri.parse(
-                'package:dependency_injection/annotations/autowired.dart'),
+                'package:dependency_injection/injection/auto_inject.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
