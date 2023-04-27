@@ -21,14 +21,21 @@ class AutoInject {
         final annotations = variable.metadata;
         if (annotations.isNotEmpty) {
           for (dynamic annotation in annotations) {
+            InstanceMirror instanceMirror = reflection.reflect(this);
             if (annotation is Autowired) {
-              final typeMirror = reflection.reflectType(annotation.type) as ClassMirror;
-              InstanceMirror instanceMirror = reflection.reflect(this);
-              final nameMethod = "set${capitalize(variable.simpleName)}";
-              instanceMirror.invokeSetter(
-                nameMethod,
-                typeMirror.newInstance("", [])
-              );
+              if (annotation.type != null) {
+                final typeMirror = reflection.reflectType(annotation.type!) as ClassMirror;
+                instanceMirror.invokeSetter(
+                  annotation.nameSetter,
+                  typeMirror.newInstance("", [])
+                );
+              } else {
+                final variableMirror = reflection.reflectType(variable.reflectedType) as ClassMirror;
+                instanceMirror.invokeSetter(
+                  annotation.nameSetter,
+                  variableMirror.newInstance("", [])
+                );
+              }
             }
           }
         }

@@ -2,10 +2,12 @@ import 'reflection.dart';
 
 @Reflection()
 class Autowired {
+  final String nameSetter;
   @Reflection()
-  final Type type;
+  final Type? type;
 
   const Autowired({
-    required this.type
+    required this.nameSetter,
+    this.type
   });
 }
