@@ -6,22 +6,18 @@ abstract class IRepository {}
 
 @Reflection()
 class Teste extends AutoInject {
-  @Autowired()
+  @Autowired(type: Repository)
   late final IRepository repository;
-
-  set teste(IRepository repository) {
-    this.repository = repository;
-  }
-
+  
   set setRepository(IRepository repository) {
     this.repository = repository;
   }
 }
 
+@Reflection()
 class Repository extends IRepository {}
 
 void main() {
-  AutoInject.register<IRepository>(Repository());
   final teste = Teste();
   print(teste.repository);
 }

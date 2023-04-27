@@ -6,16 +6,11 @@ import '../util/capitalize.dart';
 import '../main.reflectable.dart';
 
 class AutoInject {
-  static final Map<Type, dynamic> _dependescies = {};
   static const reflection = Reflection();
 
   AutoInject() {
     initializeReflectable();
     inject();
-  }
-
-  static void register<T>(T instance) {
-    _dependescies[T] = instance;
   }
 
   void inject() {
@@ -27,14 +22,13 @@ class AutoInject {
         if (annotations.isNotEmpty) {
           for (dynamic annotation in annotations) {
             if (annotation is Autowired) {
-              final property = variable.reflectedType;
-              final dependency = _dependescies[property];
-
-              if (dependency != null) {
-                InstanceMirror instanceMirror = reflection.reflect(this);
-                final nameMethod = "set${capitalize(variable.simpleName)}";
-                instanceMirror.invokeSetter(nameMethod, dependency);
-              }
+              final typeMirror = reflection.reflectType(annotation.type) as ClassMirror;
+              InstanceMirror instanceMirror = reflection.reflect(this);
+              final nameMethod = "set${capitalize(variable.simpleName)}";
+              instanceMirror.invokeSetter(
+                nameMethod,
+                typeMirror.newInstance("", [])
+              );
             }
           }
         }

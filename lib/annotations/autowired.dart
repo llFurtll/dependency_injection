@@ -1,3 +1,11 @@
+import 'reflection.dart';
+
+@Reflection()
 class Autowired {
-  const Autowired();
+  @Reflection()
+  final Type type;
+
+  const Autowired({
+    required this.type
+  });
 }
