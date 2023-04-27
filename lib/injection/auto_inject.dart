@@ -2,7 +2,6 @@ import 'package:reflectable/reflectable.dart';
 
 import '../annotations/autowired.dart';
 import '../annotations/reflection.dart';
-import '../util/capitalize.dart';
 import '../main.reflectable.dart';
 
 class AutoInject {
