@@ -1,6 +1,6 @@
-import 'package:dependency_injection/annotations/autowired.dart';
-import 'package:dependency_injection/annotations/reflection.dart';
-import 'package:dependency_injection/injection/dependency_injection.dart';
+import 'annotations/autowired.dart';
+import 'annotations/reflection.dart';
+import 'injection/auto_inject.dart';
 
 abstract class IRepository {}
 
