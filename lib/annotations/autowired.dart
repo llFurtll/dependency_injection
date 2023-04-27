@@ -1,0 +1,3 @@
+class Autowired {
+  const Autowired();
+}
