@@ -1,8 +1,9 @@
 import 'package:dependency_injection/annotations/inject.dart';
 import 'package:dependency_injection/annotations/reflection.dart';
 import 'package:dependency_injection/injection/auto_inject.dart';
-import 'package:dependency_injection_example/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
+
+import '../controllers/home_controller.dart';
 
 @Reflection()
 class Home extends StatelessWidget with AutoInject {
@@ -17,7 +18,19 @@ class Home extends StatelessWidget with AutoInject {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(controller.nome),
+        child: FutureBuilder(
+          future: controller.getRandom(),
+          builder: (context, snapshot) {
+            switch (snapshot.connectionState) {
+              case ConnectionState.none:
+              case ConnectionState.waiting:
+              case ConnectionState.active:
+                return const CircularProgressIndicator();
+              case ConnectionState.done:
+                return Text("${snapshot.data}");
+            }
+          },
+        ),
       ),
     );
   }

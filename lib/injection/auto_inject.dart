@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:reflectable/reflectable.dart';
 
 import '../annotations/inject.dart';
@@ -9,7 +8,6 @@ mixin AutoInject {
   static final Map<Type, dynamic> _dependencies = {};
   static const reflection = Reflection();
 
-  @mustCallSuper
   void inject() {
     final mirror = reflection.reflectType(runtimeType) as ClassMirror;
 
