@@ -3,7 +3,6 @@ import 'package:reflectable/reflectable.dart';
 import '../annotations/inject.dart';
 import '../annotations/reflection.dart';
 
-@Reflection()
 mixin AutoInject {
   static final Map<Type, dynamic> _dependencies = {};
   static const reflection = Reflection();
