@@ -1,19 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:reflectable/reflectable.dart';
 
 import '../annotations/inject.dart';
 import '../annotations/reflection.dart';
-import '../main.reflectable.dart';
 
 @Reflection()
-class AutoInject {
+mixin AutoInject {
   static final Map<Type, dynamic> _dependencies = {};
   static const reflection = Reflection();
 
-  AutoInject() {
-    initializeReflectable();
-    inject();
-  }
-
+  @mustCallSuper
   void inject() {
     final mirror = reflection.reflectType(runtimeType) as ClassMirror;
 
@@ -54,5 +50,9 @@ class AutoInject {
         }
       }
     });
+  }
+
+  static void init(void Function() initializeReflectable) {
+    initializeReflectable();
   }
 }

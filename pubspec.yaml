@@ -12,7 +12,6 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
   reflectable: ^4.0.5
-  build_runner: ^2.3.3
 
 dev_dependencies:
   flutter_test:
@@ -25,7 +24,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   # This section identifies this Flutter project as a plugin project.
-  # The 'pluginClass' specifies the class (in Java, Kotlin, Swift, Objective-C, etc.)
+  # The 'pluginClass' specifies the class (in Java, Kdependency_injectiondependency_injectionotlin, Swift, Objective-C, etc.)
   # which should be registered in the plugin registry. This is required for
   # using method channels.
   # The Android 'package' specifies package in which the registered class is.
@@ -44,6 +43,12 @@ flutter:
       some_platform:
         pluginClass: somePluginClass
     # -------------------
+  generate:
+    reflectable:
+      include: 
+        - lib/**
+      exclude:
+        - lib/**.g.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
