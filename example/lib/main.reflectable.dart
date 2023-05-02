@@ -2,22 +2,19 @@
 // https://github.com/dart-lang/reflectable.
 
 import 'dart:core';
+import 'controllers/home_controller.dart' as prefix2;
 import 'dart:async' as prefix11;
 import 'package:dependency_injection/annotations/inject.dart' as prefix6;
 import 'package:dependency_injection/annotations/reflection.dart' as prefix0;
 import 'package:dependency_injection/global/instances.dart' as prefix5;
-import 'package:dependency_injection_example/controllers/home_controller.dart'
-    as prefix2;
-import 'package:dependency_injection_example/pages/home.dart' as prefix1;
-import 'package:dependency_injection_example/repositories/home_repository.dart'
-    as prefix4;
-import 'package:dependency_injection_example/services/home_service.dart'
-    as prefix3;
 import 'package:flutter/src/foundation/diagnostics.dart' as prefix8;
 import 'package:flutter/src/foundation/key.dart' as prefix9;
 import 'package:flutter/src/widgets/framework.dart' as prefix10;
 // ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart' as prefix7;
+import 'pages/home.dart' as prefix1;
+import 'repositories/home_repository.dart' as prefix4;
+import 'services/home_service.dart' as prefix3;
 
 // ignore_for_file: camel_case_types
 // ignore_for_file: implementation_imports
@@ -724,7 +721,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       <m.LibraryMirror>[
         r.LibraryMirrorImpl(
             r'',
-            Uri.parse('package:dependency_injection_example/pages/home.dart'),
+            Uri.parse('asset:dependency_injection/example/lib/pages/home.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
@@ -734,7 +731,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.LibraryMirrorImpl(
             r'',
             Uri.parse(
-                'package:dependency_injection_example/controllers/home_controller.dart'),
+                'asset:dependency_injection/example/lib/controllers/home_controller.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
@@ -744,7 +741,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.LibraryMirrorImpl(
             r'',
             Uri.parse(
-                'package:dependency_injection_example/services/home_service.dart'),
+                'asset:dependency_injection/example/lib/services/home_service.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
@@ -754,7 +751,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.LibraryMirrorImpl(
             r'',
             Uri.parse(
-                'package:dependency_injection_example/repositories/home_repository.dart'),
+                'asset:dependency_injection/example/lib/repositories/home_repository.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
