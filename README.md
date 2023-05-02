@@ -87,3 +87,13 @@ class Example with AutoInject {
 Como você pode ver no exemplo, a minha classe Example, configurei dois atributos para injetar as dependências, lembrando que esse processo irá acontecer quando for realizado um Example(), nisso um deles eu passei o argumento type, pois no caso é uma classe abstrata, lembrando que se você passar uma classe abstrata e não defirnir o type, a injeção não irá ocorrer e irá estourar exceptions em seu projeto. Então quando o plugin identificar que o atributo é uma classe abstrata, nesse momento ele irá criar uma nova instância para esse atributo a partir do type que foi definido.
 
 Um ponto importante é que para cada atributo precisa de um set e também lembrar que toda classe que for preciso realizar injeções de dependências ou toda classe que será utilizada para criar uma nova instância, necessita do `@reflection` para ser possível realizar essas operações.
+
+# Finalizando/Rodando o projeto
+Bom, após a criação de todas as classes, colocados as annotations, nesse momento você precisará colocar nas dependências do seu projeto o plugin `build_runner` para gerar o código que permite o suporte a reflexão, então na raiz do seu projeto você irá rodar o seguinte comanado:
+
+```
+flutter pub run build_runner build <DIR>
+```
+No caso `<DIR>` seria a pasta onde fica os arquivos principais do programa, exemplo pasta lib/web/test.
+Nisso você irá verificar que em seu projeto será criado um arquivo chamado `main.reflectable.dart`.
+Toda vez que você criar novas classes e colocar novas annotations deverá rodar esse comando para gerar novamente o arquivo citado acima com as mudanças feitas.
