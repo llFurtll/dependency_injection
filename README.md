@@ -16,7 +16,7 @@ A primeira parte é entendermos a Annotation `reflection`, essa Annotation indic
 Então nesse caso toda classe que conter essa Annotation será possível realizar operações de reflexão e injetar as dependências que você necessita.<br>
 Exemplo de uso:
 ```dart
-import import 'package:dependency_injection/global/instances.dart';
+import 'package:dependency_injection/global/instances.dart';
 
 @reflection
 class Example {}
