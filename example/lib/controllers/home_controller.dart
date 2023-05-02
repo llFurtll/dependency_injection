@@ -1,10 +1,10 @@
 import 'package:dependency_injection/annotations/inject.dart';
-import 'package:dependency_injection/annotations/reflection.dart';
+import 'package:dependency_injection/global/instances.dart';
 import 'package:dependency_injection/injection/auto_inject.dart';
 
 import '../services/home_service.dart';
 
-@Reflection()
+@reflection
 class HomeController with AutoInject {
   @Inject(nameSetter: "setService")
   late final HomeService service;

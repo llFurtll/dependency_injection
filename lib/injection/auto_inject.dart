@@ -1,12 +1,11 @@
 import 'package:reflectable/reflectable.dart';
 
 import '../annotations/inject.dart';
-import '../annotations/reflection.dart';
+import '../global/instances.dart';
 
 mixin AutoInject {
   static final Map<Type, dynamic> _dependencies = {};
-  static const reflection = Reflection();
-
+  
   void inject() {
     final mirror = reflection.reflectType(runtimeType) as ClassMirror;
 

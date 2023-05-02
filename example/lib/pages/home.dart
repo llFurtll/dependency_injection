@@ -1,11 +1,11 @@
 import 'package:dependency_injection/annotations/inject.dart';
-import 'package:dependency_injection/annotations/reflection.dart';
+import 'package:dependency_injection/global/instances.dart';
 import 'package:dependency_injection/injection/auto_inject.dart';
 import 'package:flutter/material.dart';
 
 import '../controllers/home_controller.dart';
 
-@Reflection()
+@reflection
 class Home extends StatelessWidget with AutoInject {
   @Inject(nameSetter: "setController")
   late final HomeController controller;

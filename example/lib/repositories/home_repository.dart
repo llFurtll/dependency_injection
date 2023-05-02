@@ -1,11 +1,11 @@
 import 'dart:math';
-import 'package:dependency_injection/annotations/reflection.dart';
+import 'package:dependency_injection/global/instances.dart';
 
 abstract class HomeRepository {
   Future<int> getRandom();
 }
 
-@Reflection()
+@reflection
 class HomeRepositoryImpl extends HomeRepository {
   @override
   Future<int> getRandom() async {

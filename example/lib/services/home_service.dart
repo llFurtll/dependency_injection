@@ -1,10 +1,10 @@
 import 'package:dependency_injection/annotations/inject.dart';
-import 'package:dependency_injection/annotations/reflection.dart';
 import 'package:dependency_injection/injection/auto_inject.dart';
+import 'package:dependency_injection/global/instances.dart';
 
 import '../repositories/home_repository.dart';
 
-@Reflection()
+@reflection
 class HomeService with AutoInject {
   @Inject(nameSetter: "setRepository", type: HomeRepositoryImpl)
   late final HomeRepository repository;
