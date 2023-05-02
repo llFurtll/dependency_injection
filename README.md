@@ -38,6 +38,52 @@ class Example with AutoInject {
 }
 ```
 
-*Observação:* Note que é precisso no construtor da classe chamar o método `super.inject()`, isso é necessário por ser um mixin, e no Dart não é possível obrigar o desenvolvedor a chamar uma operação no construtor utilizando esses mixins, então é sempre bom lembrar em chamar esse super caso você precise que algum atributo da sua classe seja realizado a injeção.
+<b>Observação:</b> Note que é precisso no construtor da classe chamar o método `super.inject()`, isso é necessário por ser um mixin, e no Dart não é possível obrigar o desenvolvedor a chamar uma operação no construtor utilizando esses mixins, então é sempre bom lembrar em chamar esse super caso você precise que algum atributo da sua classe seja realizado a injeção.
 
 ### 3 - Annotation `Inject`
+Essa annotation é a responsável por indicar que determinado atributo da classe deverá realizar a injeção de dependência, vamos entendê-la.
+Ao utilizar essa annotation você irá se deparar com um argumento obrigatório e um não obrigatório.
+* <b>nameSetter:</b> Aqui você irá colocar o nome do método set que o plugin precisará invocar para realizar a injeção, como hoje no Dart não é possível já instanciar a variável diretamente pela reflection, precisamos realizar essa operação por meio de um método set, então para cada atributo que você deseja injetar a dependência em uma classe, deverá criar um método set para ela e definir nesse parâmetro.
+* <b>type:</b> Você só irá utilizar esse argumento caso você deseje utilizar o princípio da inversão de dependência, no caso quando você coloca em sua classe que ela depende de um atributo do tipo abstrato e na hora de injetar a dependência é preciso injetar um objeto que implemente/extenda essa classe abstrata, nisso você irá colocar o tipo dessa classe para ser possível criar uma nova instância da mesma depois.
+
+Bom, para ficar mais fácil entender esse processo segue um exemplo utilizando as duas formas:
+```dart
+import 'package:dependency_injection/annotations/inject.dart';
+import 'package:dependency_injection/injection/auto_inject.dart';
+import 'package:dependency_injection/global/instances.dart';
+
+class IService {
+ void update();
+}
+
+@reflection
+class Service extends IService {
+ @override
+ void update() {}
+}
+
+@reflection
+class Example with AutoInject {
+ @Inject(nameSetter: "setService", type: Service) // Na hora de injetar a dependência irá criar uma nova instância de Service
+ late final IService service;
+ 
+ @Inject(nameSetter: "setOtherService") // No caso não é uma classe abstrata
+ late final Service otherService;
+
+ Example() {
+  super.inject();
+ }
+ 
+ set setService(IService service) {
+  this.service = service;
+ }
+ 
+ set setOtherService(Service otherService) {
+  this.otherService = otherService;
+ }
+}
+```
+
+Como você pode ver no exemplo, a minha classe Example, configurei dois atributos para injetar as dependências, lembrando que esse processo irá acontecer quando for realizado um Example(), nisso um deles eu passei o argumento type, pois no caso é uma classe abstrata, lembrando que se você passar uma classe abstrata e não defirnir o type, a injeção não irá ocorrer e irá estourar exceptions em seu projeto. Então quando o plugin identificar que o atributo é uma classe abstrata, nesse momento ele irá criar uma nova instância para esse atributo a partir do type que foi definido.
+
+Um ponto importante é que para cada atributo precisa de um set e também lembrar que toda classe que for preciso realizar injeções de dependências ou toda classe que será utilizada para criar uma nova instância, necessita do `@reflection` para ser possível realizar essas operações.
