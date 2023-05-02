@@ -24,10 +24,9 @@ class Example {}
 
 ### 2 - Mixin `AutoInject`
 Além da Annotation de reflexão, toda classe que você deseja que realize as injeções de dependências deverá também extender o mixin `AutoInject`, isso é necessário pois esse mixin contém o método onde irá realizar a reflexão na classe que está herdando e percorrer todas as variáveis declaradas e validar quais deverão ser injetadas as dependências, um ponto importante que aqui também é salvo em uma variável estática as dependências, onde caso outra classe dependa de uma mesma dependência, seja possível reaproveitar a instância antiga já criada.<br>
-Esse porjeto de injeção acontece apenas quando o objeto é instanciado, é assim que conseguimos realizar as operações.<br>
+Esse processo de injeção acontece apenas quando o objeto é instanciado, é assim que conseguimos realizar as operações.<br>
 Exemplo de uso:
 ```dart
-import 'package:dependency_injection/annotations/inject.dart';
 import 'package:dependency_injection/injection/auto_inject.dart';
 import 'package:dependency_injection/global/instances.dart';
 
