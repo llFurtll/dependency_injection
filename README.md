@@ -97,3 +97,33 @@ flutter pub run build_runner build <DIR>
 No caso `<DIR>` seria a pasta onde fica os arquivos principais do programa, exemplo pasta lib/web/test.
 Nisso você irá verificar que em seu projeto será criado um arquivo chamado `main.reflectable.dart`.
 Toda vez que você criar novas classes e colocar novas annotations deverá rodar esse comando para gerar novamente o arquivo citado acima com as mudanças feitas.
+Após essa etapa antes de você chamar o runApp, você deverá passar o método `initializeReflectable` para classe AutoInject para inicializar as reflexões.
+Segue o exemplo:
+```dart
+import 'package:dependency_injection/injection/auto_inject.dart';
+import 'package:dependency_injection_example/main.reflectable.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+ AutoInject.init(initializeReflectable) // Inicia o suporte as reflexões.
+ runApp(MaterialApp(
+  home: Widget(),
+ ));
+}
+```
+
+Pronto, ao iniciar o projeto as dependências serão injetadas e armazenadas automaticamente.
+
+Em casos de dúvidas não hesite entrar em contato, também estou aberto a melhorias/corretivas.
+
+### :man:  Dev
+<a href="https://www.linkedin.com/in/daniel-melonari-5413a7197/" target="_blank">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/48370450?v=4" width="100px;" height="100px" alt=""/>
+ <br />
+ <sub><b>Daniel Melonari</b></sub></a> <a href="https://www.linkedin.com/in/daniel-melonari-5413a7197/" title="Linkedin" target="_blank">🚀</a>
+
+
+Done with ❤️ by Daniel Melonari 👋🏽 Contact!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Daniel-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/daniel-melonari-5413a7197/)](https://www.linkedin.com/in/daniel-melonari-5413a7197/) 
+[![Gmail Badge](https://img.shields.io/badge/-danielmelonari@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:danielmelonari@gmail.com)](mailto:danielmelonari@gmail.com)
