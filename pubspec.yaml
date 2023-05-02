@@ -1,7 +1,14 @@
 name: dependency_injection
 description: A new Flutter plugin project.
-version: 0.0.1
-homepage:
+version: 1.0.0s
+homepage: https://github.com/llFurtll/dependency_injection
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
 
 environment:
   sdk: '>=2.19.0 <3.0.0'

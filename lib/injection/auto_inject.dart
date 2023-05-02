@@ -3,6 +3,13 @@ import 'package:reflectable/reflectable.dart';
 import '../annotations/inject.dart';
 import '../global/instances.dart';
 
+/// Mixin responsável por realizar as injeções de dependências em uma classe
+/// onde extenda esse Mixin, no momento que o objeto for instanciado o método
+/// inject será chamado e irá percorrer todos os atributos da classe e criando
+/// as instâncias de cada um e injetando por meio de um método set.
+/// 
+/// O método [inject] deverá ser chamado no construtor da classe chamando ele
+/// da seguinte forma: super.inject()
 mixin AutoInject {
   static final Map<Type, dynamic> _dependencies = {};
   
