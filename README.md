@@ -3,7 +3,7 @@
 <a href="https://www.buymeacoffee.com/danielmelonari" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 ## Por que?
-Esse projeto teve como iniciativa novamente por meio de estudos, como atualmente utilizo Spring Boot no Java fiquei pensando como poderia funcionar as injeções de dependências dele. Ao conversar com um amigo, ele me explicou que isso poderia ser utilizando reflexões, nisso realizei uma busca em Dart para ver se o mesmo suporta, percebi que teve algumas mudanças nas reflexões em dart, porém mesmo assim resolvi tentar realizar algum plugin que pudesse ajudar a realizar as injeções com base no Spring Boot, e vou dizer que fiquei muito feliz com o resultado.
+Esse projeto teve como iniciativa novamente por meio de estudos, como atualmente utilizo Spring Boot no Java fiquei pensando como poderia funcionar as injeções de dependências dele. Ao conversar com um amigo, ele me explicou que isso poderia ser utilizando reflexões, nisso realizei uma busca em Dart para ver se o mesmo suporta, percebi que teve algumas mudanças nas reflexões em Dart, porém mesmo assim resolvi tentar realizar algum plugin que pudesse ajudar a realizar as injeções com base no Spring Boot, e vou dizer que fiquei muito feliz com o resultado.
 
 ## Observações
 Como dito anteriormente, o suporte de reflexões no Flutter é algo que não é completo, existe seus poréns nesse caso, mas ainda não fiz um teste em um aplicativo maior para ver se pode ter perda de desempenho por usar reflexões nas injeções de dependências. Acredito que essa ideia deverá ser amadurecida, mas até o momento, os testes realizados utilizando dessa forma foi bem sucedida.
