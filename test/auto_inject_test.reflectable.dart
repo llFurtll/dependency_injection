@@ -3,9 +3,9 @@
 
 import 'dart:core';
 import 'auto_inject_test.dart' as prefix1;
-import 'package:dependency_injection/annotations/inject.dart' as prefix3;
-import 'package:dependency_injection/annotations/reflection.dart' as prefix0;
-import 'package:dependency_injection/global/instances.dart' as prefix2;
+import 'package:reflect_inject/annotations/inject.dart' as prefix3;
+import 'package:reflect_inject/annotations/reflection.dart' as prefix0;
+import 'package:reflect_inject/global/instances.dart' as prefix2;
 
 // ignore_for_file: camel_case_types
 // ignore_for_file: implementation_imports

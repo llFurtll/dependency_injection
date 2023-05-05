@@ -1,6 +1,6 @@
-import 'package:dependency_injection/annotations/inject.dart';
-import 'package:dependency_injection/injection/auto_inject.dart';
-import 'package:dependency_injection/global/instances.dart';
+import 'package:reflect_inject/annotations/inject.dart';
+import 'package:reflect_inject/injection/auto_inject.dart';
+import 'package:reflect_inject/global/instances.dart';
 
 import '../repositories/home_repository.dart';
 

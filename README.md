@@ -1,4 +1,4 @@
-# DependencyInjection
+# ReflectInject
 
 <a href="https://www.buymeacoffee.com/danielmelonari" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
@@ -16,7 +16,7 @@ A primeira parte é entendermos a Annotation `reflection`, essa Annotation indic
 Então nesse caso toda classe que conter essa Annotation será possível realizar operações de reflexão e injetar as dependências que você necessita.<br>
 Exemplo de uso:
 ```dart
-import 'package:dependency_injection/global/instances.dart';
+import 'package:reflect_inject/global/instances.dart';
 
 @reflection
 class Example {}
@@ -27,8 +27,8 @@ Além da Annotation de reflexão, toda classe que você deseja que realize as in
 Esse processo de injeção acontece apenas quando o objeto é instanciado, é assim que conseguimos realizar as operações.<br>
 Exemplo de uso:
 ```dart
-import 'package:dependency_injection/injection/auto_inject.dart';
-import 'package:dependency_injection/global/instances.dart';
+import 'package:reflect_inject/injection/auto_inject.dart';
+import 'package:reflect_inject/global/instances.dart';
 
 @reflection
 class Example with AutoInject {
@@ -48,9 +48,9 @@ Ao utilizar essa annotation você irá se deparar com um argumento obrigatório 
 
 Bom, para ficar mais fácil entender esse processo segue um exemplo utilizando as duas formas:
 ```dart
-import 'package:dependency_injection/annotations/inject.dart';
-import 'package:dependency_injection/injection/auto_inject.dart';
-import 'package:dependency_injection/global/instances.dart';
+import 'package:reflect_inject/annotations/inject.dart';
+import 'package:reflect_inject/injection/auto_inject.dart';
+import 'package:reflect_inject/global/instances.dart';
 
 class IService {
  void update();
@@ -100,8 +100,8 @@ Toda vez que você criar novas classes e colocar novas annotations deverá rodar
 Após essa etapa antes de você chamar o runApp, você deverá passar o método `initializeReflectable` para classe AutoInject para inicializar as reflexões.
 Segue o exemplo:
 ```dart
-import 'package:dependency_injection/injection/auto_inject.dart';
-import 'package:dependency_injection_example/main.reflectable.dart';
+import 'package:reflect_inject/injection/auto_inject.dart';
+import 'package:reflect_inject_example/main.reflectable.dart';
 import 'package:flutter/material.dart';
 
 void main() {

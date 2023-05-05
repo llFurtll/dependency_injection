@@ -4,9 +4,9 @@
 import 'dart:core';
 import 'controllers/home_controller.dart' as prefix2;
 import 'dart:async' as prefix11;
-import 'package:dependency_injection/annotations/inject.dart' as prefix6;
-import 'package:dependency_injection/annotations/reflection.dart' as prefix0;
-import 'package:dependency_injection/global/instances.dart' as prefix5;
+import 'package:reflect_inject/annotations/inject.dart' as prefix6;
+import 'package:reflect_inject/annotations/reflection.dart' as prefix0;
+import 'package:reflect_inject/global/instances.dart' as prefix5;
 import 'package:flutter/src/foundation/diagnostics.dart' as prefix8;
 import 'package:flutter/src/foundation/key.dart' as prefix9;
 import 'package:flutter/src/widgets/framework.dart' as prefix10;

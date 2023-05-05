@@ -16,7 +16,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dependency_injection:
+  reflect_inject:
     path: ../
   build_runner: ^2.3.3
 

@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:dependency_injection/global/instances.dart';
+import 'package:reflect_inject/global/instances.dart';
 
 abstract class HomeRepository {
   Future<int> getRandom();
