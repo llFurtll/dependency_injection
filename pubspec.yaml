@@ -1,5 +1,5 @@
 name: dependency_injection
-description: A new Flutter plugin project.
+description: Gerenciando as dependências do projeto por meio de reflexões.
 version: 1.0.0
 homepage: https://github.com/llFurtll/dependency_injection
 platforms:
