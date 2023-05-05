@@ -310,7 +310,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       <m.LibraryMirror>[
         r.LibraryMirrorImpl(
             r'',
-            Uri.parse('asset:dependency_injection/test/auto_inject_test.dart'),
+            Uri.parse('asset:reflect_inject/test/auto_inject_test.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},

@@ -1,6 +1,6 @@
-# dependency_injection_example
+# reflect_inject_example
 
-Demonstrates how to use the dependency_injection plugin.
+Demonstrates how to use the reflect_inject plugin.
 
 ## Getting Started
 

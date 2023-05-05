@@ -1,5 +1,5 @@
-name: dependency_injection_example
-description: Demonstrates how to use the dependency_injection plugin.
+name: reflect_inject_example
+description: Demonstrates how to use the reflect_inject plugin.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev

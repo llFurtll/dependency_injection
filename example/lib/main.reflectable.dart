@@ -721,7 +721,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       <m.LibraryMirror>[
         r.LibraryMirrorImpl(
             r'',
-            Uri.parse('asset:dependency_injection/example/lib/pages/home.dart'),
+            Uri.parse('asset:reflect_inject/example/lib/pages/home.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
@@ -731,7 +731,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.LibraryMirrorImpl(
             r'',
             Uri.parse(
-                'asset:dependency_injection/example/lib/controllers/home_controller.dart'),
+                'asset:reflect_inject/example/lib/controllers/home_controller.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
@@ -741,7 +741,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.LibraryMirrorImpl(
             r'',
             Uri.parse(
-                'asset:dependency_injection/example/lib/services/home_service.dart'),
+                'asset:reflect_inject/example/lib/services/home_service.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
@@ -751,7 +751,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.LibraryMirrorImpl(
             r'',
             Uri.parse(
-                'asset:dependency_injection/example/lib/repositories/home_repository.dart'),
+                'asset:reflect_inject/example/lib/repositories/home_repository.dart'),
             const prefix0.Reflection(),
             const <int>[],
             {},
