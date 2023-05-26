@@ -45,7 +45,7 @@ Essa annotation é a responsável por indicar que determinado atributo da classe
 Ao utilizar essa annotation você irá se deparar com um argumento obrigatório e um não obrigatório.
 * <b>nameSetter:</b> Aqui você irá colocar o nome do método set que o plugin precisará invocar para realizar a injeção, como hoje no Dart não é possível já instanciar a variável diretamente pela reflection, precisamos realizar essa operação por meio de um método set, então para cada atributo que você deseja injetar a dependência em uma classe, deverá criar um método set para ela e definir nesse parâmetro.
 * <b>type:</b> Você só irá utilizar esse argumento caso você deseje utilizar o princípio da inversão de dependência, no caso quando você coloca em sua classe que ela depende de um atributo do tipo abstrato e na hora de injetar a dependência é preciso injetar um objeto que implemente/extenda essa classe abstrata, nisso você irá colocar o tipo dessa classe para ser possível criar uma nova instância da mesma depois.
-* <b>global:<b> Padrão vem falso, nesse caso define se sua dependência será global, então se um outro objeto depender da mesma dependência será reaproveitado a instância criado anteriormente.
+* <b>global:</b> Padrão vem falso, nesse caso define se sua dependência será global, então se um outro objeto depender da mesma dependência será reaproveitado a instância criado anteriormente.
 
 Bom, para ficar mais fácil entender esse processo segue um exemplo utilizando as duas formas:
 ```dart
