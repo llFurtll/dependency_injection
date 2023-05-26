@@ -1,6 +1,6 @@
 name: reflect_inject
 description: Gerenciando as dependências do projeto por meio de reflexões.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/llFurtll/reflect_inject
 platforms:
   android:

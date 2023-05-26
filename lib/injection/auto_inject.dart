@@ -37,7 +37,9 @@ mixin AutoInject {
                     annotation.nameSetter,
                     newInstance
                   );
-                  _dependencies[variable.reflectedType] = newInstance;
+                  if (annotation.global) {
+                    _dependencies[variable.reflectedType] = newInstance;
+                  }
                 } else {
                   final variableMirror = reflection.reflectType(variable.reflectedType) as ClassMirror;
                   final newInstance = variableMirror.newInstance("", []);
@@ -45,7 +47,9 @@ mixin AutoInject {
                     annotation.nameSetter,
                     newInstance
                   );
-                  _dependencies[variable.reflectedType] = newInstance;
+                  if (annotation.global) {
+                    _dependencies[variable.reflectedType] = newInstance;
+                  }
                 }
               }
             }
